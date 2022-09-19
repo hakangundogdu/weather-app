@@ -1,41 +1,40 @@
-import { useState } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { useWeather } from '../store/weather-context';
+
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
 const options = {
   disableDefaultUI: true,
   zoomControl: true,
   scrollwheel: true,
 };
 
-const Map = ({ setCity }) => {
-  const { currentData } = useWeather();
-
-  // const properties = useSelector((state) => state.listing.properties);
-  // const searchLocation = useSelector((state) => state.listing.searchLocation);
-
-  // const [selectedProperty, setSelectedProperty] = useState(properties[0]);
+const Map = () => {
+  const { setSelectedCity, allData, day } = useWeather();
 
   const { isLoaded } = useLoadScript({
-    // googleMapsApiKey: `${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
-    googleMapsApiKey: 'AIzaSyB8uvzGEy582xEpEolbTmn6mQ51_fgfpEM',
+    googleMapsApiKey: apiKey,
   });
 
   if (!isLoaded) return;
 
   return (
-    <div className="w-full h-96">
+    <div className="w-full h-full">
       <GoogleMap
         options={options}
         zoom={7}
-        center={{ lat: 42.4328, lng: 25.6419 }}
+        center={{ lat: 42.7339, lng: 25.4858 }}
         mapContainerStyle={{ width: '100%', height: '100%' }}
         defaultOptions={{ disableDefaultUI: false }}
       >
-        {currentData.map((city) => (
+        {allData.map((city) => (
           <Marker
-            position={{ lat: city.coord.lat, lng: city.coord.lon }}
+            icon={`http://openweathermap.org/img/wn/${city.daily[day].weather[0].icon}.png`}
+            position={{ lat: city.lat, lng: city.lon }}
             key={city.id}
-            onClick={() => setCity(city.name)}
+            onClick={() => {
+              setSelectedCity(city.name);
+            }}
           />
         ))}
       </GoogleMap>
