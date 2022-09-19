@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useWeather } from '../store/weather-context';
 
 const Box = () => {

@@ -10,14 +10,17 @@ function App() {
 
   useEffect(() => {
     getAllCurrent();
-    getCityData(city);
   }, []);
+
+  useEffect(() => {
+    getCityData(city);
+  }, [city]);
 
   return (
     <Layout>
       <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-3  ">
         <div className="col-span-2 rounded-xl border overflow-hidden ">
-          <Map />
+          <Map setCity={setCity} />
         </div>
         <Box />
       </div>
@@ -25,7 +28,7 @@ function App() {
         <ul>
           {currentData
             ? currentData.map((city) => (
-                <li key={city.id}>
+                <li onClick={() => setCity(city.name)} key={city.id}>
                   {city.name} : {city.weather[0].description},{' '}
                   {city.main.feels_like},
                 </li>
