@@ -35,10 +35,15 @@ export const WeatherContextProvider = (props) => {
 
   const getCityData = async (city) => {
     try {
-      const response = await axios.get(
+      const resCurrent = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city},bg&appid=${apiKey}&units=metric`
       );
-      setCityData(response.data);
+      setCityData(resCurrent.data);
+      const resForecast = await axios.get(
+        `https://api.openweathermap.org/data/3.0/onecall?lat=${cityData.coord.lat}&lon=${cityData.coord.lon}&exclude=hourly,minutely,alerts&appid=${apiKey}`
+      );
+
+      setForecastData(resForecast.data);
     } catch (error) {
       setError('Could not fetch weather.');
     }
@@ -49,6 +54,7 @@ export const WeatherContextProvider = (props) => {
     getAllCurrent,
     getCityData,
     cityData,
+    forecastData,
     error,
   };
 

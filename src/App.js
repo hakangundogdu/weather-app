@@ -5,7 +5,8 @@ import Map from './components/Map';
 import Box from './components/Box';
 
 function App() {
-  const { currentData, getAllCurrent, getCityData } = useWeather();
+  const { currentData, getAllCurrent, getCityData, forecastData } =
+    useWeather();
   const [city, setCity] = useState('Sofia');
 
   useEffect(() => {
