@@ -10,7 +10,7 @@ export const WeatherContextProvider = (props) => {
   const [allData, setAllData] = useState([]);
   const [error, setError] = useState('');
   const [day, setDay] = useState(0);
-  const [selectedCity, setSelectedCity] = useState('Razgrad');
+  const [selectedCity, setSelectedCity] = useState('Sofia');
 
   const getAllData = async () => {
     try {

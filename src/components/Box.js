@@ -10,43 +10,42 @@ const Box = () => {
     day: dateFormat(filteredData[0].daily[day].dt).day,
     icon: `http://openweathermap.org/img/wn/${filteredData[0].daily[day].weather[0].icon}@2x.png`,
     name: filteredData[0].name,
-    degree: filteredData[0].daily[day].feels_like.day.toFixed(0),
+    degree: filteredData[0].daily[day].temp.day.toFixed(0),
+    min: filteredData[0].daily[day].temp.min.toFixed(0),
+    max: filteredData[0].daily[day].temp.max.toFixed(0),
     desc: filteredData[0].daily[day].weather[0].description,
+    humidity: filteredData[0].daily[day].humidity,
+    rain: filteredData[0].daily[day].rain,
+    pressure: filteredData[0].daily[day].pressure,
   };
-
-  console.log(weather.desc[0] + weather.desc[1] + weather.desc[2]);
 
   return (
     <>
-      <div className="col-span-1 p-10 flex flex-col  gap-y-2 rounded-xl border w-full h-full bg-sky-100 shadow-lg overflow-hidden ">
+      <div className="col-span-1 p-10 flex flex-col  gap-y-2 rounded-xl border w-full h-full bg-white border-sky-200 shadow-lg overflow-hidden ">
         {allData.length === 27 ? (
           <>
             <p className="text-sky-500 font-semibold">
-              {dateFormat(filteredData[0].daily[day].dt).date},{' '}
-              {dateFormat(filteredData[0].daily[day].dt).day}
+              {weather.date}, {weather.day}
             </p>
-            <p className="text-slate-900 font-bold text-2xl">
-              {filteredData[0].name}
-            </p>
-            <img
-              className="w-24 h-24"
-              src={`http://openweathermap.org/img/wn/${filteredData[0].daily[day].weather[0].icon}@2x.png`}
-              alt=""
-            />
+            <p className="text-slate-900 font-bold text-2xl">{weather.name}</p>
+            <img className="w-24 h-24" src={weather.icon} alt="" />
             <p className="text-slate-900 text-2xl font-bold">
-              {weather.degree} ºC
+              {weather.degree} ºC{' '}
+              <span className="ml-6 text-base font-normal">
+                {weather.max} ºC / {weather.min} ºC
+              </span>
             </p>
 
-            <p className="text-slate-600">
-              {weather.desc[0].toUpperCase()}
-              {weather.desc.slice(1)}
-            </p>
-
-            <p className="text-slate-600">
-              Humidity: {filteredData[0].daily[day].humidity}
+            <p className="capitalize font-semibold text-slate-600">
+              {weather.desc}
             </p>
             <p className="text-slate-600">
-              Pressure: {filteredData[0].daily[day].pressure}
+              <span className="font-semibold text-sky-500">Humidity: </span>{' '}
+              {weather.humidity} %
+            </p>
+            <p className="text-slate-600">
+              <span className="font-semibold text-sky-500">Rain: </span>{' '}
+              {weather.rain || 0} %
             </p>
           </>
         ) : null}
