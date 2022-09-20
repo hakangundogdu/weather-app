@@ -19,7 +19,7 @@ const Map = () => {
   if (!isLoaded) return;
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-96 rounded-xl border overflow-hidden">
       <GoogleMap
         options={options}
         zoom={7}

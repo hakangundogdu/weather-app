@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from 'react';
 import axios from 'axios';
-import { cityDetail } from '../constants/cities';
+import { cityData } from '../data/cities';
 
 const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
@@ -33,7 +33,7 @@ export const WeatherContextProvider = (props) => {
       }
     };
 
-    cityDetail.forEach((city) => {
+    cityData.forEach((city) => {
       getCityData(city);
     });
   };

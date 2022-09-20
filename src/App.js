@@ -17,13 +17,15 @@ function App() {
     <Layout>
       {allData.length === 27 && (
         <>
-          <div className="mt-6 grid md:h-96 grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-3  ">
-            <div className=" md:col-span-2 h-96 w-full rounded-xl border overflow-hidden ">
+          <div className="my-6 grid md:h-96 grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-3  ">
+            <div className=" md:col-span-2 ">
               <Map />
             </div>
             <Box />
+            <div className=" md:col-span-2 ">
+              <Slider />
+            </div>
           </div>
-          <Slider />
         </>
       )}
       {error || allData.length === 27 ? null : <Spinner />}

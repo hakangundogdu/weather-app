@@ -1,4 +1,4 @@
-export const cityDetail = [
+export const cityData = [
   {
     id: 733191,
     name: 'Blagoevgrad',
