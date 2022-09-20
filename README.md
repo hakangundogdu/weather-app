@@ -3,7 +3,7 @@
 React / Tailwind CSS / Google Maps API / Open Weather API
 
 Weather App for Bulgaria cities.
-Using [Openweather API] (https://openweathermap.org/api)
+Using [Openweather API](https://openweathermap.org/api)
 
 
 - [Live](https://weather-app-hakangundogdu.vercel.app/)
