@@ -8,9 +8,7 @@ Using [Openweather API] (https://openweathermap.org/api)
 
 - [Live](https://weather-app-hakangundogdu.vercel.app/)
 
-<a href="https://hakangundogdu.github.io/weather-app/">![NWS](https://github.com/hakangundogdu/weather-app/raw/master/public/weather-app.png)</a>
-
-
+![image](https://github.com/hakangundogdu/weather-app/blob/main/public/image.jpg?raw=true)
 
 
 ## Available Scripts
