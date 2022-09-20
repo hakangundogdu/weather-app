@@ -8,7 +8,7 @@ Using [Openweather API](https://openweathermap.org/api)
 
 - [Live](https://weather-app-hakangundogdu.vercel.app/)
 
-![image](https://github.com/hakangundogdu/weather-app/blob/main/public/weather-app.png)
+<a href='https://weather-app-hakangundogdu.vercel.app/'> ![image](https://github.com/hakangundogdu/weather-app/blob/main/public/weather-app.png)</a>
 
 
 ## Available Scripts
