@@ -8,7 +8,7 @@ Using [Openweather API] (https://openweathermap.org/api)
 
 - [Live](https://weather-app-hakangundogdu.vercel.app/)
 
-![image](/weather-app.png?raw=true)
+![image](https://github.com/hakangundogdu/weather-app/blob/main/public/weather-app.png)
 
 
 ## Available Scripts
