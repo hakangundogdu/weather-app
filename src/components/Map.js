@@ -1,5 +1,5 @@
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import { useWeather } from '../store/weather-context';
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { useWeather } from "../store/weather-context";
 
 const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -22,9 +22,9 @@ const Map = () => {
     <div className="w-full h-96 rounded-xl border overflow-hidden">
       <GoogleMap
         options={options}
-        zoom={7}
-        center={{ lat: 42.7339, lng: 25.4858 }}
-        mapContainerStyle={{ width: '100%', height: '100%' }}
+        zoom={5}
+        center={{ lat: 48.2082, lng: 16.3738 }}
+        mapContainerStyle={{ width: "100%", height: "100%" }}
         defaultOptions={{ disableDefaultUI: false }}
       >
         {allData.map((city) => (

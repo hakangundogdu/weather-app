@@ -1,5 +1,5 @@
-import { useWeather } from '../store/weather-context';
-import { dateFormat } from '../lib/date';
+import { useWeather } from "../store/weather-context";
+import { dateFormat } from "../lib/date";
 
 const Box = () => {
   const { allData, selectedCity, day } = useWeather();
@@ -22,7 +22,7 @@ const Box = () => {
   return (
     <>
       <div className="col-span-1 p-10 flex flex-col  gap-y-2 rounded-xl border w-full h-full bg-white border-sky-200 shadow-lg overflow-hidden ">
-        {allData.length === 27 ? (
+        {allData.length === 43 ? (
           <>
             <p className="text-sky-500 font-semibold">
               {weather.date}, {weather.day}
@@ -30,7 +30,7 @@ const Box = () => {
             <p className="text-slate-900 font-bold text-2xl">{weather.name}</p>
             <img className="w-24 h-24" src={weather.icon} alt="" />
             <p className="text-slate-900 text-2xl font-bold">
-              {weather.degree} ºC{' '}
+              {weather.degree} ºC{" "}
               <span className="ml-6 text-base font-normal">
                 {weather.max} ºC / {weather.min} ºC
               </span>
@@ -40,11 +40,11 @@ const Box = () => {
               {weather.desc}
             </p>
             <p className="text-slate-600">
-              <span className="font-semibold text-sky-500">Humidity: </span>{' '}
+              <span className="font-semibold text-sky-500">Humidity: </span>{" "}
               {weather.humidity} %
             </p>
             <p className="text-slate-600">
-              <span className="font-semibold text-sky-500">Rain: </span>{' '}
+              <span className="font-semibold text-sky-500">Rain: </span>{" "}
               {weather.rain || 0} %
             </p>
           </>

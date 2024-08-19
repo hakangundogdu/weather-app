@@ -1,6 +1,6 @@
-import { createContext, useState, useContext } from 'react';
-import axios from 'axios';
-import { cityData } from '../data/cities';
+import { createContext, useState, useContext } from "react";
+import axios from "axios";
+import { cityData } from "../data/cities";
 
 const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
@@ -10,7 +10,9 @@ export const WeatherContextProvider = (props) => {
   const [allData, setAllData] = useState([]);
   const [error, setError] = useState(false);
   const [day, setDay] = useState(0);
-  const [selectedCity, setSelectedCity] = useState('Sofia');
+  const [selectedCity, setSelectedCity] = useState("Vienna");
+
+  console.log(cityData);
 
   const getAllData = async () => {
     const getCityData = async (city) => {
